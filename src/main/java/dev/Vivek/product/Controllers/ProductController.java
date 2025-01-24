@@ -39,6 +39,6 @@ public class ProductController {
 
 
     public String game(){
-        return "Vivo";
+        return "Vivo1";
     }
 }
