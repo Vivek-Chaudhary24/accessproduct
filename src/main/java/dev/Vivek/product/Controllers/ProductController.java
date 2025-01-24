@@ -36,4 +36,9 @@ public class ProductController {
     public GenericProductDto createProduct(@RequestBody GenericProductDto genericProductDto){
         return productService.createProduct(genericProductDto);
     }
+
+
+    public String game(){
+        return "Vivo";
+    }
 }
