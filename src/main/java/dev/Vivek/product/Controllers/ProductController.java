@@ -16,9 +16,9 @@ public class ProductController {
         this.productService = productService;
     }
     @GetMapping("/{id}")
-    public GenericProductDto getProductById(@PathVariable ("id") Long id) throws Exception {
+    public GenericProductDto getProductById(String authToken, @PathVariable ("id") Long id) throws Exception {
 
-        return productService.getProductById(id);
+        return productService.getProductById(authToken,id);
 
 
     }
@@ -37,7 +37,7 @@ public class ProductController {
         return productService.createProduct(genericProductDto);
     }
 
-
+    @GetMapping("/ch")
     public String game(){
         return "Vivo1";
     }

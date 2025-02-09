@@ -1,5 +1,6 @@
 package dev.Vivek.product.Dtos;
 
+import dev.Vivek.product.Models.Category;
 import dev.Vivek.product.Models.Product;
 import lombok.Generated;
 import lombok.Getter;
@@ -11,7 +12,7 @@ public class GenericProductDto {
     private String title;
     private int price;
     private String description;
-    private String category;
+    private Category category;
     private String image;
     private int stock;
 
@@ -46,7 +47,7 @@ public class GenericProductDto {
     }
 
     @Generated
-    public String getCategory() {
+    public Category getCategory() {
         return this.category;
     }
 
@@ -81,7 +82,7 @@ public class GenericProductDto {
     }
 
     @Generated
-    public void setCategory(final String category) {
+    public void setCategory(final Category category) {
         this.category = category;
     }
 

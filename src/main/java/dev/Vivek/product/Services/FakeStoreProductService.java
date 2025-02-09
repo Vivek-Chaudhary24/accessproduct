@@ -27,7 +27,7 @@ public class FakeStoreProductService implements ProductService {
     }
 
     @Override
-    public GenericProductDto getProductById(Long id) throws Exception{
+    public GenericProductDto getProductById(String authToken,Long id) throws Exception{
 
         FakeStoreProductDto fakeStoreProductDto = fakeStoreClient.getProductById(id);
         return FakeStoreProductService.convertToGenericProductDto(fakeStoreProductDto);

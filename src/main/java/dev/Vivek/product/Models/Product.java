@@ -1,6 +1,6 @@
 package dev.Vivek.product.Models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Generated;
 import lombok.Getter;
@@ -14,6 +14,11 @@ public class Product extends BaseModel{
     private String description;
     private String image;
     private int stock;
+    @ManyToOne
+    @JoinColumn(name="category_id",nullable=false)
+    private Category category;
+    @OneToOne(cascade={CascadeType.REMOVE,CascadeType.PERSIST})
+    private Price price;
 
     @Generated
     public String getTitle() {
@@ -55,4 +60,16 @@ public class Product extends BaseModel{
         this.stock = stock;
     }
 
+    public void setPrice(final Price price) {
+        this.price = price;
+    }
+    public Price getPrice() {
+        return this.price;
+    }
+    public void setCategory(final Category category) {
+        this.category = category;
+    }
+    public Category getCategory() {
+        return this.category;
+    }
 }
