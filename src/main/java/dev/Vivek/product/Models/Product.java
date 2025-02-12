@@ -1,5 +1,6 @@
 package dev.Vivek.product.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Generated;
@@ -16,6 +17,7 @@ public class Product extends BaseModel{
     private int stock;
     @ManyToOne
     @JoinColumn(name="category_id",nullable=false)
+    @JsonBackReference
     private Category category;
     @OneToOne(cascade={CascadeType.REMOVE,CascadeType.PERSIST})
     private Price price;

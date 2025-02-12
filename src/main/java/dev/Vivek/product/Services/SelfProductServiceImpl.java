@@ -57,10 +57,17 @@ public class SelfProductServiceImpl implements ProductService{
     @Override
     public List<GenericProductDto> getAllProducts() {
         List<GenericProductDto> genericProductDtos = new ArrayList<>();
-
-        return List.of();
+        List<Product> products = productRepository.findAll();
+        for (Product product : products) {
+           GenericProductDto genericProductDto = new GenericProductDto();
+            genericProductDto.setTitle(product.getTitle());
+            genericProductDto.setDescription(product.getDescription());
+            genericProductDto.setId(product.getId());
+            genericProductDto.setCategory(product.getCategory());
+            genericProductDtos.add(genericProductDto);
+        }
+        return genericProductDtos;
     }
-
     @Override
     public GenericProductDto deleteProductById(Long id) {
         return null;
