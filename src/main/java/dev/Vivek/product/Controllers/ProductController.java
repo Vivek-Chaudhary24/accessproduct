@@ -2,6 +2,8 @@ package dev.Vivek.product.Controllers;
 
 import dev.Vivek.product.Dtos.GenericProductDto;
 import dev.Vivek.product.Services.ProductService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,13 +13,15 @@ import java.util.List;
 public class ProductController {
 
     private ProductService productService;
+    @Value("${server.port}")
+    private String port;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
     @GetMapping("/{id}")
     public GenericProductDto getProductById(String authToken, @PathVariable ("id") Long id) throws Exception {
-
+           System.out.println("In productservice"+port);
         return productService.getProductById(authToken,id);
 
 
