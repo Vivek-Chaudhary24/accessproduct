@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@Primary
+
 @Service
 @RequiredArgsConstructor
 public class SelfProductServiceImpl implements ProductService{

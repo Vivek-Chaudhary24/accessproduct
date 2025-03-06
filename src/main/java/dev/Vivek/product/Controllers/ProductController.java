@@ -3,7 +3,7 @@ package dev.Vivek.product.Controllers;
 import dev.Vivek.product.Dtos.GenericProductDto;
 import dev.Vivek.product.Services.ProductService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
