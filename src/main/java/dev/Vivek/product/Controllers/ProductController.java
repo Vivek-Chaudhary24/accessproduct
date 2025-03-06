@@ -43,6 +43,6 @@ public class ProductController {
 
     @GetMapping("/ch")
     public String game(){
-        return "Vivo1";
+        return "Vivo2";
     }
 }
